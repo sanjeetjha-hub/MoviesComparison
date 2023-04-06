@@ -15,7 +15,7 @@ const autoComplete = ({ root, renderOption, onOptionSelect, inputValue, fetchDat
     const resultsWrapper = root.querySelector('.results');
     let summary;
 
-    if (searchButton1.id === 'left-left-autocomplete') {
+    if (root.id === 'left-autocomplete') {
         summary = document.querySelector('#left-summary');
     } else {
         summary = document.querySelector('#right-summary')
@@ -29,6 +29,7 @@ const autoComplete = ({ root, renderOption, onOptionSelect, inputValue, fetchDat
         if (!items.length) {
             dropdown.classList.remove('is-active');
             summary.innerHTML = '';
+            console.log(summary);
             return;
         }
         resultsWrapper.innerHTML = '';
